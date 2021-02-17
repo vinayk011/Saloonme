@@ -41,7 +41,7 @@ class UserStoresFragment : BaseFragment<FragmentUserStoresBinding>() {
                     if (!(activity as ActivityUserStores).navHostFragment.navController.popBackStack())
                         (activity as ActivityUserStores).finish()
                     else
-                        (activity as ActivityUserStores).navHostFragment.navController.navigateUp();
+                        (activity as ActivityUserStores).navHostFragment.navController.navigateUp()
                 }
             }
         requireActivity().onBackPressedDispatcher.addCallback(this, callback)

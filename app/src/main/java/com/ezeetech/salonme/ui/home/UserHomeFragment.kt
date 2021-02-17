@@ -35,6 +35,7 @@ import com.ezeetech.salonme.network_call.GetSlidersNetworkCall
 import com.ezeetech.salonme.network_call.SignInNetworkCall
 import com.ezeetech.salonme.stores
 import com.ezeetech.salonme.ui.login.ActivityUserAccount
+import com.ezeetech.salonme.ui.store.ActivityUserStores
 import com.salonme.base.*
 import io.paperdb.Paper
 import org.imaginativeworld.whynotimagecarousel.CarouselItem
@@ -127,6 +128,9 @@ class UserHomeFragment : BaseFragment<FragmentUserHomeBinding>() {
         }
     }
 
+    override fun onBackPressed() {
+            (activity as ActivityUserHome).finish()
+    }
     private fun updateSliders() {
         val sliders = Paper.book().read<List<Slider>>(DB_SLIDERS)
         sliders?.let { binding.homeCarousel.addData(getCarousalData(it)) }

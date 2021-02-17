@@ -97,14 +97,17 @@ class ActivityUserHome : BaseActivity<ActivityUserHomeBinding>() {
         GpsUtils(this)
     }
     private var selected: Int = R.id.navigation_home
-    override fun onBackPressed() {
+    /*override fun onBackPressed() {
         if (selected == R.id.navigation_home) {
             finish()
         } else {
             binding.bottomNavigation.selectedItemId = R.id.navigation_home
         }
-    }
+    }*/
 
+    fun navigateHome(){
+        binding.bottomNavigation.selectedItemId = R.id.navigation_home
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
@@ -207,7 +210,7 @@ class ActivityUserHome : BaseActivity<ActivityUserHomeBinding>() {
         )
     }
 
-    override fun onSupportNavigateUp() = navHostFragment.navController.navigateUp()
+    override fun onSupportNavigateUp() = navHostFragment.navController.navigateUp() || super.onSupportNavigateUp()
 
     fun appBar(show: Boolean, back: Boolean) {
         binding.layoutAppbar.layoutParams.height =

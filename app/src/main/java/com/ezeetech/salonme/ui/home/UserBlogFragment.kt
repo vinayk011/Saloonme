@@ -23,6 +23,7 @@ import com.ezeetech.salonme.adapter.AdapterUserBlog
 import com.ezeetech.salonme.databinding.FragmentUserBlogBinding
 import com.ezeetech.salonme.listener.UserBlogActionListener
 import com.ezeetech.salonme.model.UserBlog
+import com.ezeetech.salonme.ui.store.ActivityUserStores
 import com.ezeetech.salonme.veiw_model.UserBlogViewModel
 import com.salonme.base.BaseFragment
 import com.salonme.base.Trace
@@ -77,6 +78,9 @@ class UserBlogFragment : BaseFragment<FragmentUserBlogBinding>() {
             }
     }
 
+    override fun onBackPressed() {
+            (activity as ActivityUserHome).navigateHome()
+    }
     private fun initViewModel() {
         viewModel._userBlogViewModel.observe(viewLifecycleOwner, Observer {
             blogList = it as ArrayList<UserBlog>

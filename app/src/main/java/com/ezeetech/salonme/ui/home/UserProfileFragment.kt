@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import com.ezeetech.salonme.R
 import com.ezeetech.salonme.databinding.FragmentUserHomeBinding
 import com.ezeetech.salonme.databinding.FragmentUserProfileBinding
+import com.ezeetech.salonme.ui.store.ActivityUserStores
 import com.salonme.base.BaseFragment
 import com.salonme.base.inflateFragment
 
@@ -47,5 +48,8 @@ class UserProfileFragment : BaseFragment<FragmentUserProfileBinding>() {
 
     }
 
+    override fun onBackPressed() {
+        (activity as ActivityUserHome).navigateHome()
+    }
 
 }
