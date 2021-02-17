@@ -1,0 +1,40 @@
+<!--
+  ~ /**
+  ~  * Created by Vinay.
+  ~  * Copyright (c) 2021  EzeeTech . All rights reserved.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minWidth="250dp"
+        android:minHeight="400dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search_country_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/country_name"
+            android:textSize="18sp" />
+
+        <ListView
+            android:id="@+id/county_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancel_button"
+            style="@style/ButtonStyleLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:text="@string/cancel" />
+    </LinearLayout>
+</layout>

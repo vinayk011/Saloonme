@@ -1,0 +1,81 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/hintLayout"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_mobile_number"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/hint"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:enabled="false"
+                android:focusable="false"
+                android:selectAllOnFocus="false"
+                android:text="@string/space"
+                android:textColor="@android:color/transparent"
+                android:textIsSelectable="false" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/countryCodeLayout"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/countryCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:background="@android:color/transparent"
+                    android:focusableInTouchMode="false"
+                    android:inputType="none"
+                    android:minWidth="40dp"
+                    android:textIsSelectable="false"
+                    android:textColor="@color/colorSecondary"
+                    tools:text="+91" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/separator"
+                android:layout_marginEnd="5dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mobileNumberLayout"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mobileNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/colorSecondary"
+                    android:inputType="phone"
+                    android:maxLength="15"
+                    tools:text="9876543210"
+                    android:textCursorDrawable="@drawable/color_cursor"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Created by Vinay on 26-1-2021 for EzeeTech.
+  ~  Copyright (c) 2021  EzeeTech . All rights reserved.
+  ~
+  -->
+
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">salooonme.com</domain>
+    </domain-config>
+</network-security-config>

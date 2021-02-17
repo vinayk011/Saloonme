@@ -1,0 +1,77 @@
+<resources>
+
+
+    <string name="title_activity_user_account">ActivityUserAccount</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_confirm_password">Confirm password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="signin_title">Already \nhave an \nAccount?</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="social_sign_text">use social login</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="register_title">Here’s\nyour first\nstep with \nus! </string>
+    <string name="register_now">New user? Register Now</string>
+    <string name="empty_first_name">Enter first name</string>
+    <string name="empty_last_name">Enter last name</string>
+    <string name="not_same_password">Confirm Password is not same as Password</string>
+    <string name="valid_email">Enter valid email</string>
+    <string name="error_accept_terms">Accept terms and conditions by clicking on the checkbox</string>
+    <string name="hint_sign_up_pin">Set your 4 digit PIN</string>
+    <string name="enter_email">Enter email</string>
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_email">Email</string>
+    <string name="terms_services_text">Terms and conditions</string>
+    <string name="register">Register</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_mobile_number">Mobile Number</string>
+    <string name="space"><![CDATA[&#160;]]></string>
+    <string name="country_name">Search for country</string>
+    <string name="cancel">Cancel</string>
+    <string name="plus">+</string>
+    <string name="country_code_format">+%s</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="empty_mobile_number">Enter mobile number</string>
+    <string name="valid_mobile_number">Enter valid mobile number</string>
+    <string name="empty_password">Enter Password</string>
+    <string name="valid_password">Enter valid Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="text_hint">Search store..</string>
+
+    <!-- Bottom navigation menu fields  -->
+    <string name="menu">Menu</string>
+    <string name="home">Home</string>
+    <string name="orders">Orders</string>
+    <string name="blog">Blog</string>
+    <string name="user">User</string>
+    <string name="desc_location">img_location</string>
+    <string name="category_men">MEN</string>
+    <string name="category_women">WOMEN</string>
+    <string name="category_kids">KIDS</string>
+    <string name="best_deals">Best deals</string>
+    <string name="deals_decs">Minimum 25% off at the selected premium saloons</string>
+    <string name="best_deals_in_hyd">Discover best deals in hyderabad</string>
+    <string name="see_all">See All</string>
+    <string name="read_more">Read More</string>
+    <string name="blog_title">Hair Care tips in Monsoon</string>
+    <string name="blog_content">Monsoon season is always loved by everyone. Everything becomes enjoyable in this weather. But there is one thing</string>
+    <string name="hint_dob">mm/dd/yyyy</string>
+    <string name="permission_required">Permission Required</string>
+    <string name="location_required_to_find_stores">Location permission is required to find stores near you</string>
+    <string name="turn_on_permissions_at_setting"><![CDATA[Please turn on permissions at\n[Setting] > [Permission]]]></string>
+    <string name="settings">Settings</string>
+    <string name="request">Request</string>
+    <string name="location_unknown">Unknown Location</string>
+
+</resources>

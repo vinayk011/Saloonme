@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /**
+  ~  * Created by Vinay.
+  ~  * Copyright (c) 2021  EzeeTech . All rights reserved.
+  ~  */
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_user_home"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.ezeetech.salonme.ui.home.UserHomeFragment"
+        android:label="user_home"
+        tools:layout="@layout/fragment_user_home"/>
+
+    <fragment
+        android:id="@+id/navigation_orders"
+        android:name="com.ezeetech.salonme.ui.home.UserOrdersFragment"
+        android:label="user_orders"
+        tools:layout="@layout/fragment_user_orders"/>
+
+    <fragment
+        android:id="@+id/navigation_blog"
+        android:name="com.ezeetech.salonme.ui.home.UserBlogFragment"
+        android:label="user_blog"
+        tools:layout="@layout/fragment_user_home">
+        <action
+            android:id="@+id/navToUserBlogDetailsFragment"
+            app:destination="@id/user_blog_details_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/user_blog_details_fragment"
+        android:name="com.ezeetech.salonme.ui.home.UserBlogDetailsFragment"
+        android:label="user_blog_details"
+        tools:layout="@layout/fragment_user_blog_details" >
+        <argument
+            android:name="userBlog"
+            app:argType="com.ezeetech.salonme.model.UserBlog" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.ezeetech.salonme.ui.home.UserProfileFragment"
+        android:label="user_profile"
+        tools:layout="@layout/fragment_user_profile"/>
+</navigation>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /**
+  ~  * Created by Vinay.
+  ~  * Copyright (c) 2021  EzeeTech . All rights reserved.
+  ~  */
+  -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints"
+        android:padding="@dimen/constraint_margin">
+
+        <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+            android:id="@+id/home_carousel"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:autoPlay="true"
+            app:bottomShadowAlpha="0.6"
+            app:bottomShadowHeight="64dp"
+            app:imagePlaceholder="@drawable/ic_picture"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showBottomShadow="true"
+            app:showIndicator="true" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/constraint_margin_double"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_carousel">
+
+            <!--<androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_category"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />-->
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/best_deal_header"
+            style="@style/viewParent"
+            android:text="@string/best_deals_in_hyd"
+            android:textSize="@dimen/headerTextSize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/best_deal_see_all"
+            style="@style/viewParent"
+            android:text="@string/see_all"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/card_title" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow_best_deals"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            app:constraint_referenced_ids="best_deal_header,best_deal_see_all"
+            app:flow_horizontalAlign="center"
+            app:flow_verticalAlign="bottom"
+            app:flow_horizontalStyle="spread_inside"
+            app:layout_constraintEnd_toEndOf="@id/home_carousel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recycler_view_category" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_best_deals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/constraint_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/best_deal_header" />
+
+        <TextView
+            android:id="@+id/home_service_header"
+            style="@style/viewParent"
+            android:text="@string/best_deals_in_hyd"
+            android:textSize="@dimen/headerTextSize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/home_service_see_all"
+            style="@style/viewParent"
+            android:text="@string/see_all"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/card_title" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow_home_service"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            app:constraint_referenced_ids="home_service_header,home_service_see_all"
+            app:flow_horizontalAlign="center"
+            app:flow_horizontalStyle="spread_inside"
+            app:layout_constraintEnd_toEndOf="@id/home_carousel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recycler_view_best_deals" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/constraint_margin"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_service_header">
+
+            <include layout="@layout/adapter_best_deal" />
+
+            <include layout="@layout/adapter_best_deal" />
+        </LinearLayout>
+
+        <!-- <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical"
+             android:paddingLeft="@dimen/normalPadding"
+             android:paddingRight="@dimen/normalPadding"
+             app:layout_constraintTop_toBottomOf="@+id/home_service_header">
+
+             &lt;!&ndash;replace with recycler view&ndash;&gt;
+             <include layout="@layout/layout_featured_news" />
+         </LinearLayout>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

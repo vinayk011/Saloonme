@@ -1,0 +1,31 @@
+<!--
+  ~ /**
+  ~  * Created by Vinay.
+  ~  * Copyright (c) 2021  EzeeTech . All rights reserved.
+  ~  */
+  -->
+
+<resources>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MobileNumberView">
+        <attr name="mn_hint" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="BadgedTabLayout">
+        <attr name="badgeTextColor" format="color" />
+        <attr name="badgeTextSize" format="dimension" />
+        <attr name="badgeSelectedTextColor" format="color" />
+        <attr name="badgeBackgroundColor" format="color" />
+        <attr name="badgeSelectedBackgroundColor" format="color" />
+        <attr name="tabTextSize" format="dimension" />
+    </declare-styleable>
+</resources>

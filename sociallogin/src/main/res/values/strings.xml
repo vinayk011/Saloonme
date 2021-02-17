@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Social</string>
+
+<!--    <string name="facebook_app_id">775128972925825</string>-->
+<!--    <string name="fb_login_protocol_scheme">fb775128972925825</string>-->
+    <string name="facebook_app_id">394920088052018</string>
+    <string name="fb_login_protocol_scheme">fb394920088052018</string>
+
+    <string name="TWITTER_CONSUMER_KEY">bOiIMC0FXQT7RBHH8A3nI4Yi2</string>
+    <string name="TWITTER_CONSUMER_SECRET">VTfZwwTaFFt55v6BdXmBGc2ZnJGVZySkQDmT1aMb300i3PmADh</string>
+
+    <string name="title_activity_social">" "</string>
+
+    <string name="something_went_wrong">Something went wrong. Try again.</string>
+    <string name="processing">Processing…</string>
+    <string name="close_social_activity">close</string>
+</resources>

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.ezeetech.salonme.ui.signup.SignUpModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context="com.ezeetech.salonme.ui.signup.FragmentUserSignUp">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_title"
+            android:textColor="@color/text_color_primary"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/sign_in_logo"
+            app:layout_constraintEnd_toStartOf="@+id/sign_in_logo"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/sign_in_logo" />
+
+        <ImageView
+            android:id="@+id/sign_in_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_login_hero"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/first_name_layout"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/hint_first_name"
+            android:minHeight="60dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            app:error="@{model.firstNameError}"
+            app:errorEnabled="@{model.firstNameError.length != 0}"
+            app:layout_constraintLeft_toLeftOf="@+id/sign_in_logo"
+            app:layout_constraintRight_toRightOf="@+id/sign_in_logo"
+            app:layout_constraintTop_toBottomOf="@+id/sign_in_logo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:singleLine="true"
+                android:text="@={model.firstName}"
+                android:textColor="@color/colorSecondary"
+                android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/last_name_layout"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/hint_last_name"
+            android:minHeight="60dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            app:error="@{model.lastNameError}"
+            app:errorEnabled="@{model.lastNameError.length != 0}"
+            app:layout_constraintLeft_toLeftOf="@+id/first_name_layout"
+            app:layout_constraintRight_toRightOf="@+id/first_name_layout"
+            app:layout_constraintTop_toBottomOf="@+id/first_name_layout">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:singleLine="true"
+                android:text="@={model.lastName}"
+                android:textColor="@color/colorSecondary"
+                android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.ezeetech.salonme.ui.widget.mobile_number.MobileNumberView
+            android:id="@+id/mobile_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/last_name_layout"
+            app:mn_hint="@string/hint_mobile_number"
+            app:number_error="@{model.mobileNumberError}"
+            app:number_input="@={model.mobileNumber}" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_password"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:minHeight="60dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            app:layout_constraintLeft_toLeftOf="@+id/mobile_number"
+            app:layout_constraintRight_toRightOf="@+id/mobile_number"
+            app:layout_constraintTop_toBottomOf="@+id/mobile_number"
+            app:password_error="@{model.passwordError}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_password"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:selectAllOnFocus="true"
+                android:textColor="@color/colorSecondary"
+                android:text="@={model.password}"
+                android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_confirm_password"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:minHeight="60dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            app:layout_constraintLeft_toLeftOf="@+id/mobile_number"
+            app:layout_constraintRight_toRightOf="@+id/mobile_number"
+            app:layout_constraintTop_toBottomOf="@+id/input_layout_password"
+            app:password_error="@{model.confirmPasswordError}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_confirm_password"
+                android:imeOptions="actionDone"
+                android:textColor="@color/colorSecondary"
+                android:inputType="textPassword"
+                android:selectAllOnFocus="true"
+                android:text="@={model.confirmPassword}"
+                android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_layout"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/hint_email"
+            android:minHeight="60dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            app:error="@{model.emailError}"
+            app:errorEnabled="@{model.emailError.length != 0}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_layout_confirm_password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:textColor="@color/colorSecondary"
+                android:text="@={model.email}"
+                android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dob_layout"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/hint_dob"
+            android:minHeight="60dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            app:error="@{model.emailError}"
+            app:errorEnabled="@{model.emailError.length != 0}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/email_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/date_of_birth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="date"
+            android:singleLine="true"
+            android:text="@={model.dateOfBirth}"
+            android:textColor="@color/colorSecondary"
+            android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:id="@+id/terms_services_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dob_layout">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/terms_services_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/terms_services"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/terms_services_text"
+                android:textColor="@color/text_color_primary" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sign_up_button"
+            style="@style/ButtonStyleDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:text="@string/register"
+            android:theme="@style/ButtonTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/terms_services_layout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

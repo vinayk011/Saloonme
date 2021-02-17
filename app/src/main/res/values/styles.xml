@@ -1,0 +1,103 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorSecondaryDark</item>
+        <item name="android:windowContentTransitions">true</item>
+
+    </style>
+
+    <style name="ThemeLogin" parent="AppTheme">
+        <item name="android:statusBarColor">@android:color/transparent
+        </item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="RoundHintStyle" parent="Widget.Design.TextInputLayout">
+        <item name="boxStrokeColor">@color/colorSecondary</item>
+        <item name="hintTextColor">@color/colorPrimaryLight</item>
+    </style>
+
+    <style name="InputTextStyle" parent="Widget.Design.TextInputLayout">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:textCursorDrawable">@drawable/color_cursor</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/colorPrimaryLight</item>
+        <item name="minHeight">@color/colorPrimaryLight</item>
+        <item name="android:textColorHint">@color/colorSecondaryDark</item>
+        <!-- TextInputLayout text color-->
+        <item name="hintTextColor">@color/colorPrimaryLight</item>
+    </style>
+
+    <style name="ButtonStyleDark" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">20dp</item>
+        <item name="android:backgroundTint">@color/colorPrimaryLight</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="rippleColor">@color/colorPrimary</item>
+        <item name="android:minWidth">150dp</item>
+    </style>
+
+    <style name="ButtonStyleLight" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">20dp</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="rippleColor">@color/colorPrimaryLight</item>
+        <item name="android:minWidth">150dp</item>
+    </style>
+
+    <style name="ButtonTheme" parent="AppTheme">
+        <item name="colorControlHighlight">@color/text_color_primary</item>
+        <item name="colorButtonNormal">@color/colorAccent</item>
+    </style>
+    <style name="TextButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
+
+        <item name="android:textColor">@color/text_color_primary</item>
+        <item name="android:minWidth">150dp</item>
+    </style>
+
+    <style name="viewParent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="viewParent.headerText">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/headerTextSize</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="miniTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/miniTitle</item>
+    </style>
+
+    <style name="LinearProgressTheme" parent="AppTheme">
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:progressBackgroundTint">@color/colorPrimaryLight</item>
+    </style>
+</resources>

@@ -1,0 +1,36 @@
+<!--
+  ~ /**
+  ~  * Created by Vinay.
+  ~  * Copyright (c) 2021  EzeeTech . All rights reserved.
+  ~  */
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/layout_user_account"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/saloon_login"
+        tools:context=".ui.home.ActivityUserAccount">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <fragment
+                android:id="@+id/user_account_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:navGraph="@navigation/user_account" />
+        </ScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

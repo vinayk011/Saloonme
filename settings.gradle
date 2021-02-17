@@ -1,0 +1,4 @@
+rootProject.name='Salonme'
+include ':app'
+include ':base'
+include ':sociallogin'

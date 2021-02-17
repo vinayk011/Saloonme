@@ -1,0 +1,227 @@
+<!--
+  ~ /**
+  ~  * Created by Vinay.
+  ~  * Copyright (c) 2021  EzeeTech . All rights reserved.
+  ~  */
+  -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.ezeetech.salonme.ui.login.LoginViewModel" />
+
+        <variable
+            name="handler"
+            type="com.ezeetech.salonme.ui.login.LoginHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context="com.ezeetech.salonme.ui.login.LoginFragment">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signin_title"
+            android:textColor="@color/text_color_primary"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/sign_in_logo"
+            app:layout_constraintEnd_toStartOf="@+id/sign_in_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/sign_in_logo" />
+
+        <ImageView
+            android:id="@+id/sign_in_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_login_hero"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_layout"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/hint_email"
+            android:minHeight="60dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            app:error="@{model.emailError}"
+            app:errorEnabled="@{model.emailError.length != 0}"
+            app:layout_constraintLeft_toLeftOf="@+id/sign_in_logo"
+            app:layout_constraintRight_toRightOf="@+id/sign_in_logo"
+            app:layout_constraintTop_toBottomOf="@+id/sign_in_logo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/colorSecondary"
+                android:singleLine="true"
+                android:text="@={model.email}"
+                android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--<com.ezeetech.salonme.ui.widget.mobile_number.MobileNumberView
+            android:id="@+id/mobile_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/input_bcg"
+            android:minHeight="60dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            app:layout_constraintLeft_toLeftOf="@+id/sign_in_logo"
+            app:layout_constraintRight_toRightOf="@+id/sign_in_logo"
+            app:layout_constraintTop_toBottomOf="@+id/sign_in_logo"
+            app:mn_hint="@string/hint_mobile_number"
+            app:number_error="@{model.mobileNumberError}"
+            app:number_input="@={model.mobileNumber}" />-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_password"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:minHeight="60dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            app:layout_constraintLeft_toLeftOf="@+id/email_layout"
+            app:layout_constraintRight_toRightOf="@+id/email_layout"
+            app:layout_constraintTop_toBottomOf="@+id/email_layout"
+            app:password_error="@{model.passwordError}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_password"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:selectAllOnFocus="true"
+                android:textColor="@color/colorSecondary"
+                android:text="@={model.password}"
+                android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/forgot_password"
+            style="@style/TextButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{() -> handler.forgotPassword()}"
+            android:text="@string/forgot_password"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color_primary"
+            android:theme="@style/ButtonTheme"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_layout_password" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_button"
+            style="@style/ButtonStyleDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:onClick="@{() -> handler.signIn()}"
+            android:text="@string/sign_in"
+            android:theme="@style/ButtonTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forgot_password" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/register_button"
+            style="@style/TextButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:onClick="@{() -> handler.register()}"
+            android:text="@string/register_now"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color_primary"
+            android:theme="@style/ButtonTheme"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_button" />
+
+        <TextView
+            android:id="@+id/social_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/social_sign_text"
+            android:textColor="@color/text_color_primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_button" />
+
+        <View
+            android:layout_width="75dp"
+            android:layout_height="1dp"
+            android:background="@color/text_color_primary"
+            app:layout_constraintBottom_toBottomOf="@+id/social_text"
+            app:layout_constraintEnd_toStartOf="@id/social_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/social_text"
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:layout_width="75dp"
+            android:layout_height="1dp"
+            android:background="@color/text_color_primary"
+            app:layout_constraintBottom_toBottomOf="@+id/social_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/social_text"
+            app:layout_constraintTop_toTopOf="@+id/social_text"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/ic_facebook"
+            android:contentDescription="@string/facebook"
+            android:onClick="@{() -> handler.facebook()}"
+            android:padding="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/google"
+            app:layout_constraintHorizontal_bias="0.651"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/social_text" />
+
+        <ImageView
+            android:id="@+id/google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="120dp"
+            android:background="@drawable/ic_google_plus"
+            android:contentDescription="@string/google"
+            android:onClick="@{() -> handler.google()}"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/facebook"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Created by Vinay on 22-1-2021 for EzeeTech.
+  ~  Copyright (c) 2021  EzeeTech . All rights reserved.
+  ~
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.ezeetech.salonme.model.UserBlog" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/blog_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="8dp"
+                android:transitionName="@{@string/blogImage(String.valueOf(model.blogId))}"
+                app:load_Image_uri="@{model.blogWriterImage}"
+                tools:src="@drawable/blog_writer"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/blog_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#DE000000"
+                android:transitionName="@{@string/blogTitle(String.valueOf(model.title))}"
+                android:text="@{model.title}"
+                tools:text="@string/blog_title"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/blog_image"/>
+
+            <TextView
+                android:id="@+id/blog_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#8A000000"
+                android:maxLines="3"
+                android:text="@{model.content}"
+                tools:text="@string/blog_content"
+                app:layout_constraintTop_toBottomOf="@+id/blog_title"
+                app:layout_constraintBottom_toTopOf="@+id/action_read_more"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/blog_image" />
+
+          <!--  <ImageView
+                android:id="@+id/media_image"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />-->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/action_read_more"
+                style="@style/ButtonStyleLight"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/read_more"
+                android:textAllCaps="false"
+                app:layout_constraintTop_toBottomOf="@+id/blog_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/blog_image" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

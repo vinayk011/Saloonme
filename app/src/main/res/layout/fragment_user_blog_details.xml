@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Created by Vinay on 2-2-2021 for EzeeTech.
+  ~  Copyright (c) 2021  EzeeTech . All rights reserved.
+  ~
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.ezeetech.salonme.veiw_model.UserBlogDetailsViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/blog_image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="fitXY"
+            android:transitionName="@{@string/blogImage(String.valueOf(viewmodel.userBlog.blogId))}"
+            app:load_Image_uri="@{viewmodel.userBlog.blogWriterImage}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/blog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/constraint_margin"
+            android:layout_marginTop="@dimen/constraint_margin_double"
+            android:transitionName="@{@string/blogTitle(String.valueOf(viewmodel.userBlog.title))}"
+            android:text="@{viewmodel.userBlog.title}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/blog_image"
+            tools:text="Hello world" />
+        <TextView
+            android:id="@+id/blog_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/constraint_margin"
+            android:layout_marginTop="@dimen/constraint_margin_double"
+            android:text="@{viewmodel.userBlog.content}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/blog_title"
+            tools:text="Hello world" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

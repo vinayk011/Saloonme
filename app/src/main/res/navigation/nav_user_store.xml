@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Created by Vinay on 14-2-2021 for EzeeTech.
+  ~  Copyright (c) 2021  EzeeTech . All rights reserved.
+  ~
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_user_store"
+    app:startDestination="@id/fragmentUserStores">
+    <fragment
+        android:id="@+id/fragmentUserStores"
+        android:name="com.ezeetech.salonme.ui.store.UserStoresFragment"
+        android:label="user_stores"
+        tools:layout="@layout/fragment_user_stores">
+        <action
+            android:id="@+id/action_SignIn_to_SignUp"
+            app:destination="@id/fragmentUserSignUp"
+            app:popUpTo="@+id/user_account"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

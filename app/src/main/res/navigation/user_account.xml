@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /**
+  ~  * Created by Vinay.
+  ~  * Copyright (c) 2021  EzeeTech . All rights reserved.
+  ~  */
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_account"
+    app:startDestination="@id/fragmentUserLogin">
+
+    <fragment
+        android:id="@+id/fragmentUserLogin"
+        android:name="com.ezeetech.salonme.ui.login.LoginFragment"
+        android:label="user_sign_in"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_SignIn_to_SignUp"
+            app:destination="@id/fragmentUserSignUp"
+            app:popUpTo="@+id/user_account"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentUserSignUp"
+        android:name="com.ezeetech.salonme.ui.signup.FragmentUserSignUp"
+        android:label="fragment_user_sign_up"
+        tools:layout="@layout/fragment_user_sign_up"/>
+</navigation>
