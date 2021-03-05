@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ezeetech.salonme.R
 import com.ezeetech.salonme.ViewHolderBinding
 import com.ezeetech.salonme.databinding.AdapterCategoryBinding
-import com.ezeetech.salonme.listener.StoreCategoryClickListener
+import com.ezeetech.salonme.listener.ItemClickListener
 import com.ezeetech.salonme.model.StoreCategory
 import java.util.*
 
@@ -22,7 +22,7 @@ import java.util.*
     class AdapterCategories(
     private val mContext: Context,
     private val arrayList: ArrayList<StoreCategory>,
-    private val onClick: StoreCategoryClickListener
+    private val listener: ItemClickListener<StoreCategory>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -39,7 +39,7 @@ import java.util.*
         val storeCategory = arrayList[holder.adapterPosition]
         val adapterCategoryBinding =
             (holder as ViewHolderBinding).binding as AdapterCategoryBinding
-        adapterCategoryBinding.layout.setOnClickListener { onClick.onClicked(storeCategory) }
+        adapterCategoryBinding.layout.setOnClickListener { listener.onClicked(storeCategory) }
         adapterCategoryBinding.model = storeCategory
         adapterCategoryBinding.executePendingBindings()
     }

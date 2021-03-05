@@ -1,7 +1,7 @@
 /*
  * *
  *  * Created by Vinay.
- *  * Copyright (c) 2021  Aivizen . All rights reserved.
+ *  * Copyright (c) 2021  EzeeTech . All rights reserved.
  *
  */
 

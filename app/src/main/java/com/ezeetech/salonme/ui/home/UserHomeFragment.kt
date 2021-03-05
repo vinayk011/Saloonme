@@ -15,7 +15,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ezeetech.salonme.BuildConfig
@@ -23,19 +22,13 @@ import com.ezeetech.salonme.R
 import com.ezeetech.salonme.adapter.AdapterBestDeal
 import com.ezeetech.salonme.adapter.AdapterCategories
 import com.ezeetech.salonme.databinding.FragmentUserHomeBinding
-import com.ezeetech.salonme.home
-import com.ezeetech.salonme.listener.BestDealClickListener
-import com.ezeetech.salonme.listener.StoreCategoryClickListener
+import com.ezeetech.salonme.listener.ItemClickListener
 import com.ezeetech.salonme.model.BestDeal
 import com.ezeetech.salonme.model.Slider
 import com.ezeetech.salonme.model.StoreCategory
 import com.ezeetech.salonme.network.model.NetworkResponse
-import com.ezeetech.salonme.network.model.SignInResponse
 import com.ezeetech.salonme.network_call.GetSlidersNetworkCall
-import com.ezeetech.salonme.network_call.SignInNetworkCall
 import com.ezeetech.salonme.stores
-import com.ezeetech.salonme.ui.login.ActivityUserAccount
-import com.ezeetech.salonme.ui.store.ActivityUserStores
 import com.salonme.base.*
 import io.paperdb.Paper
 import org.imaginativeworld.whynotimagecarousel.CarouselItem
@@ -136,7 +129,7 @@ class UserHomeFragment : BaseFragment<FragmentUserHomeBinding>() {
         sliders?.let { binding.homeCarousel.addData(getCarousalData(it)) }
     }
 
-    private val storeCategoryClickListener = object : StoreCategoryClickListener {
+    private val storeCategoryClickListener = object : ItemClickListener<StoreCategory> {
         override fun onClicked(category: StoreCategory) {
             Trace.i("Selected Store:" + category.type)
             context?.let {
@@ -149,9 +142,10 @@ class UserHomeFragment : BaseFragment<FragmentUserHomeBinding>() {
         }
     }
 
-    private val bestDealClickListener = object : BestDealClickListener {
+
+    private val bestDealClickListener = object : ItemClickListener<BestDeal>{
         override fun onClicked(bestDeal: BestDeal) {
-            Trace.i("Selected Store:" + bestDeal.title)
+           Trace.i("Selected item:"+bestDeal.title)
         }
     }
 

@@ -1,7 +1,7 @@
 /*
  * *
  *  * Created by Vinay.
- *  * Copyright (c) 2021  Aivizen . All rights reserved.
+ *  * Copyright (c) 2021  EzeeTech . All rights reserved.
  *
  */
 
@@ -16,14 +16,12 @@ import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.FragmentNavigator
-import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ezeetech.salonme.R
 import com.ezeetech.salonme.adapter.AdapterUserBlog
 import com.ezeetech.salonme.databinding.FragmentUserBlogBinding
 import com.ezeetech.salonme.listener.UserBlogActionListener
 import com.ezeetech.salonme.model.UserBlog
-import com.ezeetech.salonme.ui.store.ActivityUserStores
 import com.ezeetech.salonme.veiw_model.UserBlogViewModel
 import com.salonme.base.BaseFragment
 import com.salonme.base.Trace
